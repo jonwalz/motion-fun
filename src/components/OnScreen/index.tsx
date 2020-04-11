@@ -1,6 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import {AnimatePresence} from "framer-motion";
+import {useScrollPosition} from "@n8tb1t/use-scroll-position";
+
+const Card = styled.div<{color: string}>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: ${({color}) => color};
+`;
 
 const Container = styled.div`
   color: white;
@@ -8,30 +17,41 @@ const Container = styled.div`
   font-weight: bold;
   display: flex;
   align-items: center;
-  border: 1px solid black;
+  min-height: 10px;
+  min-width: 1px;
+  justify-content: center;
 `;
 
 interface Props {
-  value: string;
+  value: string | React.ReactNode;
+  backgroundColor: string;
+  initiallyVisible: boolean;
+  id: string;
 }
 
-const OnScreen = ({ value }: Props) => {
-  const [show, setShow] = React.useState(false);
+const OnScreen: React.FunctionComponent<Props> = ({
+  children,
+  backgroundColor,
+  initiallyVisible,
+  id,
+}) => {
+  const [isVisible, setIsVisible] = React.useState(initiallyVisible);
+  const elRef = React.useRef(null);
+
+  useScrollPosition(
+    ({currPos}) => setIsVisible(currPos.y < 712),
+    [],
+    elRef,
+    false,
+    100
+  );
+
   return (
-    <Container onClick={() => setShow(true)}>
+    <Card color={backgroundColor}>
       <AnimatePresence>
-        {show && (
-          <motion.div
-            key={value}
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 0 }}
-          >
-            {value}
-          </motion.div>
-        )}
+        <Container ref={elRef}>{isVisible && children}</Container>
       </AnimatePresence>
-    </Container>
+    </Card>
   );
 };
 
