@@ -1,40 +1,16 @@
 import * as React from "react";
-import styled from "styled-components";
 import {AnimatePresence} from "framer-motion";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
-
-const Card = styled.div<{color: string}>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: ${({color}) => color};
-`;
-
-const Container = styled.div`
-  color: white;
-  font-size: 72px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  min-height: 10px;
-  min-width: 1px;
-  justify-content: center;
-`;
+import {CardType} from "../../types/appState";
+import {Card} from "../Cards/DeafultCard";
+import {StyleContainer, SensorContainer} from "./styles";
 
 interface Props {
-  value: string | React.ReactNode;
-  backgroundColor: string;
   initiallyVisible: boolean;
-  id: string;
+  card: CardType;
 }
 
-const OnScreen: React.FunctionComponent<Props> = ({
-  children,
-  backgroundColor,
-  initiallyVisible,
-  id,
-}) => {
+const OnScreen: React.FunctionComponent<Props> = ({initiallyVisible, card}) => {
   const [isVisible, setIsVisible] = React.useState(initiallyVisible);
   const elRef = React.useRef(null);
 
@@ -43,15 +19,15 @@ const OnScreen: React.FunctionComponent<Props> = ({
     [],
     elRef,
     false,
-    100
+    300
   );
 
   return (
-    <Card color={backgroundColor}>
-      <AnimatePresence>
-        <Container ref={elRef}>{isVisible && children}</Container>
-      </AnimatePresence>
-    </Card>
+    <StyleContainer color={card.backgroundColor}>
+      <SensorContainer ref={elRef}>
+        <AnimatePresence>{isVisible && <Card card={card} />}</AnimatePresence>
+      </SensorContainer>
+    </StyleContainer>
   );
 };
 

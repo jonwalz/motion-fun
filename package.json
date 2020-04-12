@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
-    "@rooks/use-visibility-sensor": "^3.6.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -17,11 +16,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-element-scroll-hook": "^1.0.8",
+    "react-icons": "^3.9.0",
     "react-scripts": "3.4.1",
     "react-use-scrollspy": "^2.0.0",
     "styled-components": "^5.1.0",
-    "typescript": "~3.7.2",
-    "use-hooks": "^2.0.0-rc.5"
+    "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
