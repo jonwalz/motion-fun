@@ -15,7 +15,11 @@ export const SensorContainer = styled.div`
   font-weight: bold;
   display: flex;
   align-items: center;
-  min-height: 10px;
-  min-width: 1px;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
