@@ -1,4 +1,5 @@
 import {CardData} from "./../types/appState";
+import colors from "../constants/colors";
 
 export const cardData: CardData = [
   {
@@ -8,7 +9,7 @@ export const cardData: CardData = [
     component: "bitcoinSvg",
   },
   {
-    backgroundColor: "#4048C9",
+    backgroundColor: colors.brand.blue,
     id: "2",
     value: "Second",
     component: "bitcoinGraph",
