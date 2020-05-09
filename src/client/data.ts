@@ -11,24 +11,24 @@ export const cardData: CardData = [
     backgroundColor: "#4048C9",
     id: "2",
     value: "Second",
-    component: null,
+    component: "bitcoinGraph",
   },
-  {
-    backgroundColor: "#505AFC",
-    id: "3",
-    value: "Third",
-    component: null,
-  },
-  {
-    backgroundColor: "#020A96",
-    id: "4",
-    value: "Fourth",
-    component: null,
-  },
-  {
-    backgroundColor: "#963A81",
-    id: "5",
-    value: "Animated Child",
-    component: "animatedChild",
-  },
+  // {
+  //   backgroundColor: "#505AFC",
+  //   id: "3",
+  //   value: "Third",
+  //   component: null,
+  // },
+  // {
+  //   backgroundColor: "#020A96",
+  //   id: "4",
+  //   value: "Fourth",
+  //   component: null,
+  // },
+  // {
+  //   backgroundColor: "#963A81",
+  //   id: "5",
+  //   value: "Animated Child",
+  //   component: "animatedChild",
+  // },
 ];

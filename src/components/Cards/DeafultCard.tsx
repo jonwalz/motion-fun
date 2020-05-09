@@ -4,10 +4,12 @@ import {motion} from "framer-motion";
 import {CardType} from "../../types/appState";
 import {AnimatedChild} from "../AnimatedChild/index";
 import BitcoinSvg from "../BitcoinSvg";
+import BitcoinGraph from "../BitcoinGraph/index";
 
 const componentMap = {
   animatedChild: AnimatedChild,
   bitcoinSvg: BitcoinSvg,
+  bitcoinGraph: BitcoinGraph,
 };
 
 interface CardChildProps {
