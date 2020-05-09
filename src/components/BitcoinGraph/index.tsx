@@ -11,6 +11,7 @@ import {useFetchPriceData} from "../../client/client";
 import moment from "moment";
 import {SelectionBar} from "../Selectionbar";
 import {BitcoinGraphContainer} from "./styles";
+import {CryptoChooserPanel} from "../CryptoChooserPanel/index";
 
 const Chart = () => {
   const {data} = useFetchPriceData();
@@ -18,7 +19,6 @@ const Chart = () => {
 
   return (
     <BitcoinGraphContainer>
-      <SelectionBar>SelectionBar</SelectionBar>
       <ResponsiveContainer width="95%" height={500}>
         <ScatterChart>
           <XAxis
@@ -46,6 +46,7 @@ const Chart = () => {
 const Container = () => {
   return (
     <div style={{minWidth: "100%", minHeight: "100%", height: "100%"}}>
+      <CryptoChooserPanel />
       <Chart />
     </div>
   );
