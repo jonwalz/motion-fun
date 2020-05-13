@@ -1,42 +1,45 @@
 import React from "react";
 import {
-  Scatter,
-  ScatterChart,
+  Line,
+  LineChart,
   ResponsiveContainer,
   XAxis,
   YAxis,
   Tooltip,
 } from "recharts";
 import {useFetchPriceData} from "../../client/client";
-import moment from "moment";
 import {BitcoinGraphContainer} from "./styles";
 import {CryptoChooserPanel} from "../CryptoChooserPanel/index";
+import {timeFormatter} from "./utils";
 
 const Chart = () => {
   const {data} = useFetchPriceData();
+
+  // TODO: Make a loading component
   if (!data) return <div>Loading...</div>;
 
   return (
     <BitcoinGraphContainer>
       <ResponsiveContainer width="95%" height={500}>
-        <ScatterChart>
+        <LineChart
+          data={data}
+          onMouseMove={event => {
+            // TODO: Use this to update external price widget
+            console.log("EVENT: ", event);
+          }}
+        >
           <XAxis
             dataKey="date"
-            domain={["auto", "auto"]}
-            name="Time"
+            domain={["dataMin", "dataMax"]}
+            scale="time"
             type="number"
             tick={{fontSize: 12, fill: "white"}}
-            tickFormatter={timeStr => moment(timeStr).format("LLLL")}
+            tickFormatter={timeFormatter}
           />
-          <Tooltip cursor={{strokeDasharray: "3 3"}} />
+          <Tooltip cursor={{strokeDasharray: "3 3"}} content={() => null} />
           <YAxis dataKey="value" tick={{fontSize: 12, fill: "white"}} />
-          <Scatter
-            data={data}
-            line={{stroke: "#eee"}}
-            lineJointType="monotoneX"
-            name="Values"
-          />
-        </ScatterChart>
+          <Line type="linear" dataKey={"value"} stroke="#ffffff" dot={false} />
+        </LineChart>
       </ResponsiveContainer>
     </BitcoinGraphContainer>
   );
@@ -44,7 +47,7 @@ const Chart = () => {
 
 const Container = () => {
   return (
-    <div style={{minWidth: "100%", minHeight: "100%", height: "100%"}}>
+    <div style={{minWidth: "100%", minHeight: "100%", maxHeight: "100%"}}>
       <CryptoChooserPanel />
       <Chart />
     </div>
