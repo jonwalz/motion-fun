@@ -1,9 +1,6 @@
 import styled from "styled-components";
+import {Layout} from "antd";
 
-export const BitcoinGraphContainer = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+export const BitcoinGraphContainer = styled(Layout)`
+  background-color: inherit;
 `;

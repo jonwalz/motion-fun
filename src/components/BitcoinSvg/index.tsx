@@ -6,6 +6,7 @@ import DownArrow from "../DownArrow";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  font-size: 72px;
 `;
 
 export interface BitcoinSvgProps {}

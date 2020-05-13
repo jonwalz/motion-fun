@@ -11,7 +11,6 @@ export const StyleContainer = styled.div<{color: string}>`
 
 export const SensorContainer = styled.div`
   color: white;
-  font-size: 72px;
   font-weight: bold;
   display: flex;
   align-items: center;

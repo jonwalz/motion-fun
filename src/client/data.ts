@@ -12,7 +12,7 @@ export const cardData: CardData = [
     backgroundColor: colors.brand.blue,
     id: "2",
     value: "Second",
-    component: "bitcoinGraph",
+    component: "chartPanel",
   },
   // {
   //   backgroundColor: "#505AFC",
