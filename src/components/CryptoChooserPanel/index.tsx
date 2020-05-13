@@ -1,6 +1,12 @@
 import React from "react";
-import {Conatiner} from "../Selectionbar/styles";
+import {ConatinerHeader} from "../Selectionbar/styles";
+import {Layout} from "antd";
+import "antd/dist/antd.css";
 
 export const CryptoChooserPanel = () => {
-  return <Conatiner>Chooser panel</Conatiner>;
+  return (
+    <Layout>
+      <ConatinerHeader>Chooser panel</ConatinerHeader>
+    </Layout>
+  );
 };

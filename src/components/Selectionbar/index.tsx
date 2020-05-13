@@ -1,8 +1,8 @@
 import React from "react";
-import {Conatiner} from "./styles";
+import {ConatinerHeader} from "./styles";
 
 const SelectionBar: React.FC = ({children}) => {
-  return <Conatiner>{children}</Conatiner>;
+  return <ConatinerHeader>{children}</ConatinerHeader>;
 };
 
 export {SelectionBar};

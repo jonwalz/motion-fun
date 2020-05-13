@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import {Layout} from "antd";
+import colors from "../../constants/colors";
+const {Header} = Layout;
 
-export const Conatiner = styled.div`
+export const ConatinerHeader = styled(Header)`
   border: 1px solid white;
   width: 100%;
-  padding: 10px;
+  background-color: ${colors.brand.blue};
 `;

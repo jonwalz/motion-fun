@@ -9,7 +9,6 @@ import {
 } from "recharts";
 import {useFetchPriceData} from "../../client/client";
 import moment from "moment";
-import {SelectionBar} from "../Selectionbar";
 import {BitcoinGraphContainer} from "./styles";
 import {CryptoChooserPanel} from "../CryptoChooserPanel/index";
 
