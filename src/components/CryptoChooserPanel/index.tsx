@@ -4,7 +4,7 @@ import {Conatiner, Wrapper} from "./styles";
 export const CryptoChooserPanel = () => {
   return (
     <Conatiner>
-      <Wrapper>Chooser panel</Wrapper>
+      <Wrapper>Chooser</Wrapper>
     </Conatiner>
   );
 };
