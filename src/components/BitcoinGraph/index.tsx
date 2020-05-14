@@ -35,11 +35,19 @@ const Chart = () => {
               domain={["dataMin", "dataMax"]}
               scale="time"
               type="number"
-              tick={{fontSize: 12, fill: "white"}}
+              tick={{
+                fontSize: 12,
+                fill: "white",
+              }}
               tickFormatter={timeFormatter}
+              stroke="white"
             />
             <Tooltip cursor={{strokeDasharray: "3 3"}} content={() => null} />
-            <YAxis dataKey="value" tick={{fontSize: 12, fill: "white"}} />
+            <YAxis
+              dataKey="value"
+              tick={{fontSize: 12, fill: "white"}}
+              stroke="white"
+            />
             <Line
               type="linear"
               dataKey={"value"}

@@ -9,6 +9,10 @@ export const Header = styled(H)`
   background-color: ${colors.brand.blue};
 `;
 
+export const PriceWidget = styled.div`
+  color: white;
+`;
+
 export const ChartOptionsContainer = styled(Layout)`
   display: flex;
   align-items: center;

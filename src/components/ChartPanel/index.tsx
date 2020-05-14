@@ -1,14 +1,14 @@
 import React from "react";
 import {CryptoChooserPanel} from "../CryptoChooserPanel/index";
 import Chart from "../BitcoinGraph/index";
-import {ChartOptionsContainer, Header} from "./styles";
+import {ChartOptionsContainer, Header, PriceWidget} from "./styles";
 import {Layout} from "antd";
 
 export const ChartPanel = () => {
   return (
     <Layout>
       <Header>
-        <div style={{justifySelf: "flex-end"}}>Price widget</div>
+        <PriceWidget>Price widget</PriceWidget>
       </Header>
       <ChartOptionsContainer>
         <CryptoChooserPanel />
