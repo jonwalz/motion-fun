@@ -7,14 +7,17 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import {useRecoilValue} from "recoil";
 import {useFetchPriceData} from "../../client/client";
 import {BitcoinGraphContainer} from "./styles";
 import {timeFormatter} from "./utils";
 import {Layout} from "antd";
+import {selectCoinDisplayName} from "../../state/selectors/index";
 const {Content} = Layout;
 
 const Chart = () => {
-  const {data} = useFetchPriceData();
+  const {slugString} = useRecoilValue(selectCoinDisplayName);
+  const {data} = useFetchPriceData(slugString);
 
   // TODO: Make a loading component
   if (!data) return <div>Loading...</div>;
